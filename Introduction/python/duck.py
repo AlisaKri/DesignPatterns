@@ -18,6 +18,9 @@ class FlyNoWay(FlyBehavior):
     def fly(self):
         print("I cannot fly")
 
+class FlyRocketPowered(FlyBehavior):
+    def fly(self):
+        print("I fly Rocket Powered!")
 # define abstract class QuackBehavior
 
 class QuackBehavior(ABC):
@@ -47,6 +50,12 @@ class Duck():
         self.quackBehavior = None
         self.value = "I am a duck"
     
+    def display():
+        pass
+    
+    # Important: pass the function into the setter and assing the function call within the setter
+    def setFlyBehavior(self, fb):
+        self.flyBehavior = fb()
     def performFly(self):
         self.flyBehavior.fly()
 
@@ -65,11 +74,29 @@ class MallardDuck(Duck):
     def display(self):
         print("I am a Mallard Duck!")
 
+class ModelDuck(Duck):
+    def __init__(self):
+        super().__init__()
+        self.flyBehavior = FlyNoWay()
+        self.quackBehavior = Quack()
+
+    def display(self):
+        print("I am a Model Duck!")
+
 def main():
     mallard = MallardDuck()
+    mallard.display()
     mallard.performQuack()
     mallard.performFly()
     mallard.swim()
+
+    model = ModelDuck()
+    model.display()
+    model.performQuack()
+    model.performFly()
+    model.setFlyBehavior(FlyRocketPowered)
+    model.performFly()
+
 
 
 if __name__ == "__main__":
