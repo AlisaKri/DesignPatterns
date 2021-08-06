@@ -55,7 +55,7 @@ class Duck():
     
     # Important: pass the function into the setter and assing the function call within the setter
     def setFlyBehavior(self, fb):
-        self.flyBehavior = fb()
+        self.flyBehavior = fb
     def performFly(self):
         self.flyBehavior.fly()
 
@@ -94,7 +94,7 @@ def main():
     model.display()
     model.performQuack()
     model.performFly()
-    model.setFlyBehavior(FlyRocketPowered)
+    model.setFlyBehavior(FlyRocketPowered())
     model.performFly()
 
 
