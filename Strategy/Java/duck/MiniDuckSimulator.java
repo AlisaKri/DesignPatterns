@@ -1,4 +1,4 @@
-package Introduction.Java.duck;
+package Strategy.Java.duck;
 public class MiniDuckSimulator {
     public static void main(String[] args) {
         Duck mallard = new MallardDuck();

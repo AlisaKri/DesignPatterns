@@ -1,6 +1,9 @@
 from abc import ABC, abstractmethod
 
 # define abstract class FlyBehavior
+# difference with the Java implementation that this is an abstract class
+# and not an Interface. Since interface is basically an abstract class with
+# only methods, this works.
 
 class FlyBehavior(ABC):
     @abstractmethod
@@ -43,6 +46,9 @@ class Squeak(QuackBehavior):
         print("Squeak!")
 
 # define a duck parent class
+# Difference with Java implementation: Duck is a "normal" class and not
+# an abstract class. There is no reasion to make it ABC, because then
+# all methods would have to be overriden, according to the abc package implementation
 
 class Duck():
     def __init__(self):

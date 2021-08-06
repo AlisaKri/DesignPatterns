@@ -1,4 +1,4 @@
-package Introduction.Java.duck;
+package Strategy.Java.duck;
 public abstract class Duck {
     FlyBehavior flyBehavior;
     QuackBehavior quackBehavior;

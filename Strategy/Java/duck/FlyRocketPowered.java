@@ -1,4 +1,4 @@
-package Introduction.Java.duck;
+package Strategy.Java.duck;
 
 public class FlyRocketPowered implements FlyBehavior{
     public void fly(){
